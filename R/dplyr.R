@@ -3,7 +3,5 @@
 #' Test function that uses dplyr.
 #' @export
 test_function <- function() {
-  iris %>%
-    dplyr::tbl_df() %>%
-    dplyr::filter_("Species == 'setosa'")
+  dplyr::filter_(dplyr::tbl_df(iris), "Species == 'setosa'")
 }
